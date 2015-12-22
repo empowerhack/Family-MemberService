@@ -104,7 +104,15 @@ Response
 
 ### Installation
 
+#### Maven / Spring boot plugin (preferred)
+
+* `mvn spring-boot:run`
+
+*OR*
+
+#### Old school approach
+
 * `mvn package`
 * `java -jar target/family-memberservice-0.0.1-SNAPSHOT.jar`
 
-Webserver will be running on `http://localhost:8081`
+After following either step, the Webserver will be running on `http://localhost:8081`
