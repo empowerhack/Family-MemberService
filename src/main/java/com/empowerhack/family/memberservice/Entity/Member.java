@@ -3,8 +3,7 @@ package com.empowerhack.family.memberservice.Entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Set;
 
 @Data
@@ -23,4 +22,10 @@ final public class Member {
 
     @NotNull
     private Boolean isPrivate = true;
+
+    @OneToMany
+    private Set<Url> urls;
+
+    @OneToMany
+    private Set<Skill> skills;
 }
