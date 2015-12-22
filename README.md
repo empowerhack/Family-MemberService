@@ -92,3 +92,19 @@ Response
   }
 }
 ```
+
+---
+
+## Run locally
+
+### Dependencies
+
+* Java v8+
+* Maven
+
+### Installation
+
+* `mvn package`
+* `java -jar target/family-memberservice-0.0.1-SNAPSHOT.jar`
+
+Webserver will be running on `http://localhost:8081`
