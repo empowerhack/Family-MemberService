@@ -33,4 +33,7 @@ final public class Member {
 
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Skill> skills;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Interest> interests;
 }
