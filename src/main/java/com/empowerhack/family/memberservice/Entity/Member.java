@@ -18,8 +18,6 @@ final public class Member {
     @Size(min=4, max=64)
     private String name;
 
-    private String description;
-
     @NotNull
     private Boolean isPrivate = true;
 
