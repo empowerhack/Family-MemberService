@@ -28,9 +28,9 @@ final public class Member {
     @Max(100)
     private Integer availability = 0;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Url> urls;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Skill> skills;
 }
