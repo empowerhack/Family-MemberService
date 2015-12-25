@@ -23,6 +23,11 @@ final public class Member {
     @NotNull
     private Boolean isPrivate = true;
 
+    @NotNull
+    @Min(0)
+    @Max(100)
+    private Integer availability = 0;
+
     @OneToMany
     private Set<Url> urls;
 
