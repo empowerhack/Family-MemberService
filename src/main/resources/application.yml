@@ -8,3 +8,5 @@ spring:
       return-body-on-update: true
   jpa:
     show-sql: true
+
+version: v0.1.0
