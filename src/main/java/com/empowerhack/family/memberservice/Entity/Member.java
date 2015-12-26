@@ -20,8 +20,6 @@ final public class Member {
     @Size(min=4, max=64)
     private String name;
 
-    private String description;
-
     @Email
     @NotNull
     @Size(min=4, max=64)
