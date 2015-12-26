@@ -1,2 +1,12 @@
 server:
   port: ${port:8081}
+
+spring:
+  data:
+    rest:
+      return-body-on-create: true
+      return-body-on-update: true
+  jpa:
+    show-sql: true
+
+version: v0.1.0
