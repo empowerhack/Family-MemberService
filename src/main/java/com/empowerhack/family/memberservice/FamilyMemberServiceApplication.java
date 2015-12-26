@@ -1,5 +1,6 @@
 package com.empowerhack.family.memberservice;
 
+import com.empowerhack.family.memberservice.Entity.Interest;
 import com.empowerhack.family.memberservice.Entity.Member;
 import com.empowerhack.family.memberservice.Entity.Skill;
 import com.empowerhack.family.memberservice.Entity.Url;
@@ -38,6 +39,11 @@ public class FamilyMemberServiceApplication {
         skills.add(new Skill("DevOPs"));
         member1.setSkills(skills);
 
+        Set<Interest> interests = new HashSet<Interest>();
+        interests.add(new Interest("Learning"));
+        interests.add(new Interest("Networking"));
+        member1.setInterests(interests);
+
         return repository.save(member1);
     }
 
@@ -60,6 +66,12 @@ public class FamilyMemberServiceApplication {
         skills.add(new Skill("Ruby"));
         skills.add(new Skill("UI"));
         member1.setSkills(skills);
+
+        Set<Interest> interests = new HashSet<Interest>();
+        interests.add(new Interest("New Technology"));
+        interests.add(new Interest("Charity"));
+        interests.add(new Interest("NGO"));
+        member1.setInterests(interests);
 
         return repository.save(member1);
     }
