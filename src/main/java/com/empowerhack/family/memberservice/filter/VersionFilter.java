@@ -1,4 +1,4 @@
-package com.empowerhack.family.memberservice;
+package com.empowerhack.family.memberservice.filter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.Ordered;
