@@ -24,6 +24,7 @@ public class FamilyMemberServiceApplication {
 
         Member member1 = new Member();
         member1.setName("Member 1");
+        member1.setEmail("member@test.com");
         member1.setIsPrivate(true);
         member1.setAvailability(50);
 
@@ -52,6 +53,7 @@ public class FamilyMemberServiceApplication {
 
         Member member1 = new Member();
         member1.setName("Member 2");
+        member1.setEmail("member2@test.com");
         member1.setIsPrivate(false);
         member1.setAvailability(90);
 
