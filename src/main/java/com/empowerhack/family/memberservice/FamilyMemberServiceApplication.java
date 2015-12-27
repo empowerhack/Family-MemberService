@@ -1,9 +1,9 @@
 package com.empowerhack.family.memberservice;
 
-import com.empowerhack.family.memberservice.Entity.Interest;
-import com.empowerhack.family.memberservice.Entity.Member;
-import com.empowerhack.family.memberservice.Entity.Skill;
-import com.empowerhack.family.memberservice.Entity.Url;
+import com.empowerhack.family.memberservice.entity.Interest;
+import com.empowerhack.family.memberservice.entity.Member;
+import com.empowerhack.family.memberservice.entity.Skill;
+import com.empowerhack.family.memberservice.entity.Url;
 import com.empowerhack.family.memberservice.Repository.MemberRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

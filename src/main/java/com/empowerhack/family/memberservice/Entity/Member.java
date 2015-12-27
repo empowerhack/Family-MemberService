@@ -1,4 +1,4 @@
-package com.empowerhack.family.memberservice.Entity;
+package com.empowerhack.family.memberservice.entity;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Email;
