@@ -4,7 +4,7 @@ import com.empowerhack.family.memberservice.entity.Interest;
 import com.empowerhack.family.memberservice.entity.Member;
 import com.empowerhack.family.memberservice.entity.Skill;
 import com.empowerhack.family.memberservice.entity.Url;
-import com.empowerhack.family.memberservice.Repository.MemberRepository;
+import com.empowerhack.family.memberservice.repository.MemberRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

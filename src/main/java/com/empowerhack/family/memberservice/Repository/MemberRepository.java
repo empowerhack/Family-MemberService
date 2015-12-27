@@ -1,4 +1,4 @@
-package com.empowerhack.family.memberservice.Repository;
+package com.empowerhack.family.memberservice.repository;
 
 import java.util.List;
 import com.empowerhack.family.memberservice.entity.Member;
