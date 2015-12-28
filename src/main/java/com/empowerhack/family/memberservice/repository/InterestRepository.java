@@ -1,4 +1,4 @@
-package com.empowerhack.family.memberservice.jpa;
+package com.empowerhack.family.memberservice.repository;
 
 import com.empowerhack.family.memberservice.domain.Interest;
 import org.springframework.data.repository.PagingAndSortingRepository;
