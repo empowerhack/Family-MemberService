@@ -1,4 +1,4 @@
-package com.empowerhack.family.memberservice.entity;
+package com.empowerhack.family.memberservice.domain;
 
 import lombok.Data;
 

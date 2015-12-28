@@ -1,7 +1,7 @@
 package com.empowerhack.family.memberservice.repository;
 
 import java.util.List;
-import com.empowerhack.family.memberservice.entity.Member;
+import com.empowerhack.family.memberservice.domain.Member;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;

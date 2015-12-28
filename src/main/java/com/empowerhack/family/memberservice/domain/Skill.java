@@ -1,4 +1,4 @@
-package com.empowerhack.family.memberservice.entity;
+package com.empowerhack.family.memberservice.domain;
 
 import lombok.Data;
 
@@ -8,25 +8,20 @@ import javax.validation.constraints.Size;
 
 @Data
 @Entity
-final public class Url {
+final public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
-    @Size(min=4, max=64)
+    @Size(min=2, max=32)
     private String name;
 
-    @NotNull
-    @Size(min=4, max=255)
-    private String host;
-
-    Url() {
+    Skill() {
     }
 
-    public Url(String name, String host) {
+    public Skill(String name) {
         this.name = name;
-        this.host = host;
     }
 }

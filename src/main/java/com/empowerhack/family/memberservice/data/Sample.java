@@ -1,9 +1,9 @@
 package com.empowerhack.family.memberservice.data;
 
-import com.empowerhack.family.memberservice.entity.Interest;
-import com.empowerhack.family.memberservice.entity.Member;
-import com.empowerhack.family.memberservice.entity.Skill;
-import com.empowerhack.family.memberservice.entity.Url;
+import com.empowerhack.family.memberservice.domain.Interest;
+import com.empowerhack.family.memberservice.domain.Member;
+import com.empowerhack.family.memberservice.domain.Skill;
+import com.empowerhack.family.memberservice.domain.Url;
 import com.empowerhack.family.memberservice.repository.MemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
