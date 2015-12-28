@@ -10,3 +10,9 @@ spring:
     show-sql: true
 
 version: v0.2.18
+
+---
+spring:
+    profiles: production
+server:
+  port: ${port:80}
