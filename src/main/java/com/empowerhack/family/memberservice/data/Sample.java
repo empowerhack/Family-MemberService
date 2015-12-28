@@ -4,7 +4,7 @@ import com.empowerhack.family.memberservice.domain.Interest;
 import com.empowerhack.family.memberservice.domain.Member;
 import com.empowerhack.family.memberservice.domain.Skill;
 import com.empowerhack.family.memberservice.domain.Url;
-import com.empowerhack.family.memberservice.repository.MemberRepository;
+import com.empowerhack.family.memberservice.jpa.MemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
