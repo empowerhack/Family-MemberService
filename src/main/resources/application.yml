@@ -1,18 +1,25 @@
-server:
-  port: ${port:8081}
+version: v0.2.18
 
+---
 spring:
+  profiles: production
+  data:
+    rest:
+      return-body-on-create: true
+      return-body-on-update: true
+  jpa:
+    show-sql: false
+server:
+  port: ${port:80}
+
+---
+spring:
+  profiles: development
   data:
     rest:
       return-body-on-create: true
       return-body-on-update: true
   jpa:
     show-sql: true
-
-version: v0.2.18
-
----
-spring:
-    profiles: production
 server:
-  port: ${port:80}
+  port: ${port:8081}
