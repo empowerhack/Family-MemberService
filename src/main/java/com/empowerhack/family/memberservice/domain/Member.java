@@ -1,12 +1,14 @@
 package com.empowerhack.family.memberservice.domain;
 
 import lombok.Data;
+import org.hibernate.envers.Audited;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Set;
 
+@Audited
 @Data
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(name = "email_idx", columnNames = "email"))
