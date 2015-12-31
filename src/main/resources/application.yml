@@ -1,12 +1,33 @@
-server:
-  port: ${port:8081}
+version: v0.2.19
 
+---
 spring:
+  profiles: production
+  data:
+    rest:
+      return-body-on-create: true
+      return-body-on-update: true
+  jpa:
+    show-sql: false
+server:
+  port: ${port:80}
+
+---
+spring:
+  profiles: development
   data:
     rest:
       return-body-on-create: true
       return-body-on-update: true
   jpa:
     show-sql: true
-
-version: v0.2.18
+  h2:
+    console:
+      enabled: true # /h2-console for h2 web interface
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:memberdb
+    username: sa
+    password:
+server:
+  port: ${port:8081}
