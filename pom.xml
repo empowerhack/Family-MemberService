@@ -42,9 +42,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-envers</artifactId>
-			<version>5.0.6.Final</version>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-envers</artifactId>
+			<version>0.3.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -73,6 +73,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 
 </project>
