@@ -20,7 +20,7 @@ public class MemberProcessor implements ResourceProcessor<Resource<Member>> {
                         ).findRevisions(
                                 resource.getContent().getId()
                         )
-                ).withRel("changes")
+                ).withRel("audit")
         );
 
         resource.add(
@@ -30,7 +30,7 @@ public class MemberProcessor implements ResourceProcessor<Resource<Member>> {
                         ).findLastChangeRevision(
                                 resource.getContent().getId()
                         )
-                ).withRel("changes")
+                ).withRel("audit")
         );
 
         return resource;

@@ -23,7 +23,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/members/{id:[\\d]+}/changes/latest")
+    @RequestMapping(method = RequestMethod.GET, value = "/members/{id:[\\d]+}/audit/latest")
     public
     @ResponseBody
     ResponseEntity<Resource<Revision>> findLastChangeRevision(@PathVariable Long id) {
@@ -37,7 +37,7 @@ public class MemberController {
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/members/{id:[\\d]+}/changes")
+    @RequestMapping(method = RequestMethod.GET, value = "/members/{id:[\\d]+}/audit")
     public
     @ResponseBody
     ResponseEntity<Resource<Revisions>> findRevisions(@PathVariable Long id) {
