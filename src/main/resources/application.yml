@@ -1,4 +1,4 @@
-version: v0.2.19
+version: v0.2.20 # This will be updated via CI in the future
 
 ---
 spring:
