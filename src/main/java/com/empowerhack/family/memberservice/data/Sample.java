@@ -1,74 +1,71 @@
 package com.empowerhack.family.memberservice.data;
 
-import com.empowerhack.family.memberservice.domain.Interest;
 import com.empowerhack.family.memberservice.domain.Member;
-import com.empowerhack.family.memberservice.domain.Skill;
-import com.empowerhack.family.memberservice.domain.Url;
 import com.empowerhack.family.memberservice.repository.MemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Component
 public class Sample {
+
     @Bean
     public Member sampleDataMember1(MemberRepository repository) {
 
-        Member member1 = new Member();
-        member1.setName("Member 1");
-        member1.setEmail("member@test.com");
-        member1.setIsPrivate(true);
-        member1.setAvailability(50);
+        Member member = new Member();
+        member.setName("Member 1");
+        member.setEmail("member@test.com");
+        member.setIsPrivate(true);
+        member.setAvailability(50);
 
-        Set<Url> urls = new HashSet<Url>();
-        urls.add(new Url("LinkedIn", "http://linkedin.com/member1"));
-        urls.add(new Url("Facebook", "http://facebook.com/member1"));
-        urls.add(new Url("Twitter", "http://twitter.com/member1"));
-        member1.setUrls(urls);
+        HashMap<String,String> urls = new HashMap<String,String>();
+        urls.put("LinkedIn", "http://linkedin.com/member1");
+        urls.put("Facebook", "http://facebook.com/member1");
+        urls.put("Twitter", "http://twitter.com/member1");
+        member.setUrls(urls);
 
-        Set<Skill> skills = new HashSet<Skill>();
-        skills.add(new Skill("Java"));
-        skills.add(new Skill("PHP"));
-        skills.add(new Skill("DevOPs"));
-        member1.setSkills(skills);
+        ArrayList<String> skills = new ArrayList<String>();
+        skills.add("Java");
+        skills.add("PHP");
+        skills.add("DevOPs");
+        member.setSkills(skills);
 
-        Set<Interest> interests = new HashSet<Interest>();
-        interests.add(new Interest("Learning"));
-        interests.add(new Interest("Networking"));
-        member1.setInterests(interests);
+        ArrayList<String> interests = new ArrayList<String>();
+        interests.add("Learning");
+        interests.add("Networking");
+        member.setInterests(interests);
 
-        return repository.save(member1);
+        return repository.save(member);
     }
 
     @Bean
     public Member sampleDataMember2(MemberRepository repository) {
 
-        Member member1 = new Member();
-        member1.setName("Member 2");
-        member1.setEmail("member2@test.com");
-        member1.setIsPrivate(false);
-        member1.setAvailability(90);
+        Member member = new Member();
+        member.setName("Member 2");
+        member.setEmail("member2@test.com");
+        member.setIsPrivate(false);
+        member.setAvailability(90);
 
-        Set<Url> urls = new HashSet<Url>();
-        urls.add(new Url("LinkedIn", "http://linkedin.com/member2"));
-        urls.add(new Url("Facebook", "http://facebook.com/member2"));
-        urls.add(new Url("Twitter", "http://twitter.com/member2"));
-        member1.setUrls(urls);
+        HashMap<String,String> urls = new HashMap<String,String>();
+        urls.put("LinkedIn", "http://linkedin.com/member2");
+        urls.put("Facebook", "http://facebook.com/member2");
+        urls.put("Twitter", "http://twitter.com/member2");
+        member.setUrls(urls);
 
-        Set<Skill> skills = new HashSet<Skill>();
-        skills.add(new Skill("JS"));
-        skills.add(new Skill("Ruby"));
-        skills.add(new Skill("UI"));
-        member1.setSkills(skills);
+        ArrayList<String> skills = new ArrayList<String>();
+        skills.add("JS");
+        skills.add("Ruby");
+        skills.add("UI");
+        member.setSkills(skills);
 
-        Set<Interest> interests = new HashSet<Interest>();
-        interests.add(new Interest("New Technology"));
-        interests.add(new Interest("Charity"));
-        interests.add(new Interest("NGO"));
-        member1.setInterests(interests);
+        ArrayList<String> interests = new ArrayList<String>();
+        interests.add("New Technology");
+        interests.add("Charity");
+        interests.add("NGO");
+        member.setInterests(interests);
 
-        return repository.save(member1);
+        return repository.save(member);
     }
 }
