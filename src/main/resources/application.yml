@@ -1,4 +1,4 @@
-version: v0.2.19
+version: v0.2.34 # Should be managed by CI, but currently matching Issue Number
 
 ---
 spring:
