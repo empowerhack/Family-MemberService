@@ -17,7 +17,11 @@ API for the Member Service
 
 Using HAL, so resources and functionality should be auto discoverable.
 
-### Header
+### Request Header
+
+Send `Content-type: application/json`
+
+### Response Header
 
 Always contains version `X-Application-Version: vX.Y.Z` (eg. v1.2.3)
 
