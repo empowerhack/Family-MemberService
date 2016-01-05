@@ -1,3 +1,5 @@
 mvnw*
 target/
 .mvn/
+.vagrant/
+data/
