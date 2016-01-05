@@ -11,7 +11,7 @@ API for the Member Service
    * `/filter` - Runs on every **Request** and injects Application Version (from `/resources/application.yml` Config) into Response Header
    * `/repository` - Manage the Domain Model
 * `src/main/resources`
-   * `aplication.yml` - Application config (contains `dev` & `prod`
+   * `application.yml` - Application config (contains `dev` & `prod`
 
 ## API Usage examples
 
