@@ -11,37 +11,31 @@ API for the Member Service
    * `/filter` - Runs on every **Request** and injects Application Version (from `/resources/application.yml` Config) into Response Header
    * `/repository` - Manage the Domain Model
 * `src/main/resources`
-   * `aaplication.yml` - Application config
+   * `application.yml` - Application config (contains `dev` & `prod`
 
 ## API Usage examples
 
 Using HAL, so resources and functionality should be auto discoverable.
 
-### Header
+### Request Header
 
-Always contains version `X-Application-Version: v0.2.1v`
+Send `Content-type: application/json`
 
-### Request `[GET] /`
+### Response Header
+
+Always contains version `X-Application-Version: vX.Y.Z` (eg. v1.2.3)
+
+### Root of API
+
+#### Request `[GET] /`
 
 Response
 
 ```json
 {
   "_links": {
-    "urls": {
-      "href": "http://localhost:8081/urls{?page,size,sort}",
-      "templated": true
-    },
     "members": {
       "href": "http://localhost:8081/members{?page,size,sort}",
-      "templated": true
-    },
-    "skills": {
-      "href": "http://localhost:8081/skills{?page,size,sort}",
-      "templated": true
-    },
-    "interests": {
-      "href": "http://localhost:8081/interests{?page,size,sort}",
       "templated": true
     },
     "profile": {
@@ -51,7 +45,9 @@ Response
 }
 ```
 
-### Request '[GET] /members'
+### List Members
+
+#### Request '[GET] /members'
 
 Response
 
@@ -64,21 +60,26 @@ Response
         "email": "member@test.com",
         "isPrivate": true,
         "availability": 50,
+        "urls": {
+          "LinkedIn": "http://linkedin.com/member1",
+          "Twitter": "http://twitter.com/member1",
+          "Facebook": "http://facebook.com/member1"
+        },
+        "skills": [
+          "Java",
+          "PHP",
+          "DevOPs"
+        ],
+        "interests": [
+          "Learning",
+          "Networking"
+        ],
         "_links": {
           "self": {
             "href": "http://localhost:8081/members/1"
           },
           "member": {
             "href": "http://localhost:8081/members/1"
-          },
-          "skills": {
-            "href": "http://localhost:8081/members/1/skills"
-          },
-          "urls": {
-            "href": "http://localhost:8081/members/1/urls"
-          },
-          "interests": {
-            "href": "http://localhost:8081/members/1/interests"
           }
         }
       },
@@ -87,21 +88,27 @@ Response
         "email": "member2@test.com",
         "isPrivate": false,
         "availability": 90,
+        "urls": {
+          "LinkedIn": "http://linkedin.com/member2",
+          "Twitter": "http://twitter.com/member2",
+          "Facebook": "http://facebook.com/member2"
+        },
+        "skills": [
+          "JS",
+          "Ruby",
+          "UI"
+        ],
+        "interests": [
+          "New Technology",
+          "Charity",
+          "NGO"
+        ],
         "_links": {
           "self": {
             "href": "http://localhost:8081/members/2"
           },
           "member": {
             "href": "http://localhost:8081/members/2"
-          },
-          "skills": {
-            "href": "http://localhost:8081/members/2/skills"
-          },
-          "urls": {
-            "href": "http://localhost:8081/members/2/urls"
-          },
-          "interests": {
-            "href": "http://localhost:8081/members/2/interests"
           }
         }
       }
@@ -127,7 +134,9 @@ Response
 }
 ```
 
-### Request '[POST] /members'
+### Create a Member
+
+#### Request '[POST] /members'
 
 ```json
 {
@@ -149,12 +158,120 @@ Response
     },
     "member": {
       "href": "http://localhost:8081/members/1"
+    }
+  }
+}
+```
+
+### Get a specific Member
+
+#### Request '[GET] /members/1'
+
+Response
+
+```json
+{
+  "name": "Member 1",
+  "email": "member@test.com",
+  "isPrivate": true,
+  "availability": 50,
+  "urls": {
+    "LinkedIn": "http://linkedin.com/member1",
+    "Twitter": "http://twitter.com/member1",
+    "Facebook": "http://facebook.com/member1"
+  },
+  "skills": [
+    "Java",
+    "PHP",
+    "DevOPs"
+  ],
+  "interests": [
+    "Learning",
+    "Networking"
+  ],
+  "_links": {
+    "self": {
+      "href": "http://localhost:8081/members/1"
     },
-    "skills": {
-      "href": "http://localhost:8081/members/1/skills"
-    },
-    "urls": {
-      "href": "http://localhost:8081/members/1/urls"
+    "member": {
+      "href": "http://localhost:8081/members/1"
+    }
+  }
+}
+```
+
+### Search
+
+### Request '[GET] /members/search/findByName?name=Member'
+
+Response
+
+```json
+{
+  "_embedded": {
+    "members": [
+      {
+        "name": "Member 1",
+        "email": "member@test.com",
+        "isPrivate": true,
+        "availability": 50,
+        "urls": {
+          "LinkedIn": "http://linkedin.com/member1",
+          "Twitter": "http://twitter.com/member1",
+          "Facebook": "http://facebook.com/member1"
+        },
+        "skills": [
+          "Java",
+          "PHP",
+          "DevOPs"
+        ],
+        "interests": [
+          "Learning",
+          "Networking"
+        ],
+        "_links": {
+          "self": {
+            "href": "http://localhost:8081/members/1"
+          },
+          "member": {
+            "href": "http://localhost:8081/members/1"
+          }
+        }
+      },
+      {
+        "name": "Member 2",
+        "email": "member2@test.com",
+        "isPrivate": false,
+        "availability": 90,
+        "urls": {
+          "LinkedIn": "http://linkedin.com/member2",
+          "Twitter": "http://twitter.com/member2",
+          "Facebook": "http://facebook.com/member2"
+        },
+        "skills": [
+          "JS",
+          "Ruby",
+          "UI"
+        ],
+        "interests": [
+          "New Technology",
+          "Charity",
+          "NGO"
+        ],
+        "_links": {
+          "self": {
+            "href": "http://localhost:8081/members/2"
+          },
+          "member": {
+            "href": "http://localhost:8081/members/2"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost:8081/members/search/findByName?name=Member"
     }
   }
 }

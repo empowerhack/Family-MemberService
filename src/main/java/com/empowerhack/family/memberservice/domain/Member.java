@@ -6,6 +6,9 @@ import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 @Audited
@@ -35,12 +38,9 @@ final public class Member {
     @Max(100)
     private Integer availability = 0;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Url> urls;
+    private HashMap<String, String> urls;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Skill> skills;
+    private ArrayList<String> skills;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Interest> interests;
+    private ArrayList<String> interests;
 }
