@@ -1,7 +1,7 @@
 package com.empowerhack.family.memberservice.data;
 
 import com.empowerhack.family.memberservice.domain.Member;
-import com.empowerhack.family.memberservice.repository.MemberRepository;
+import com.empowerhack.family.memberservice.repository.MemberRepositoryDb;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.util.*;
 public class Sample {
 
     @Bean
-    public Member sampleDataMember1(MemberRepository repository) {
+    public Member sampleDataMember1(MemberRepositoryDb repository) {
 
         Member member = new Member();
         member.setName("Member 1");
@@ -40,7 +40,7 @@ public class Sample {
     }
 
     @Bean
-    public Member sampleDataMember2(MemberRepository repository) {
+    public Member sampleDataMember2(MemberRepositoryDb repository) {
 
         Member member = new Member();
         member.setName("Member 2");
