@@ -3,6 +3,7 @@ package com.empowerhack.family.memberservice.domain;
 import lombok.Data;
 import org.hibernate.envers.Audited;
 import org.hibernate.validator.constraints.Email;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -11,10 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-@Audited
+//@Audited
 @Data
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(name = "email_idx", columnNames = "email"))
+@Document(indexName = "members", type = "member", shards = 1, replicas = 0, refreshInterval = "-1")
 final public class Member {
 
     @Id
