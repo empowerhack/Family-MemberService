@@ -18,7 +18,7 @@ public final class CorsFilter implements Filter {
                          FilterChain chain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) resp;
 
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Origin", "*"); // @TODO: only allow from subdomains
         response.setHeader("Access-Control-Allow-Methods", "POST, PUT, PATCH, GET, OPTIONS");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
